@@ -5,6 +5,7 @@ namespace url_upload
 {
 	class noncopyable
 	{
+	public:
 		noncopyable()=default;
 		noncopyable(const noncopyable& ) = delete;
 		noncopyable& operator=(noncopyable const& ) = delete;

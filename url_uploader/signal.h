@@ -7,7 +7,7 @@
 
 namespace url_upload
 {
-	class signal: noncopyable
+	class signal: public noncopyable
 	{
 	private:
 		HANDLE handle;

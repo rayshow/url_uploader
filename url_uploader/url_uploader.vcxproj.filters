@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="upload.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -26,7 +26,7 @@
     <ClInclude Include="signal.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="noncopyable.h">
+    <ClInclude Include="upload.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

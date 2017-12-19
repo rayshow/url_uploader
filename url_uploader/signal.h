@@ -3,35 +3,42 @@
 
 #include<process.h>
 #include<Windows.h>
-#include"noncopyable.h"
 
 namespace url_upload
 {
+	
+	class noncopyable
+	{
+	public:
+		noncopyable() = default;
+		noncopyable(const noncopyable&) = delete;
+		noncopyable& operator=(noncopyable const&) = delete;
+	};
+
 	class signal: public noncopyable
 	{
 	private:
 		HANDLE handle;
 	public:
 
-		__forceinline
-			signal()  noexcept
+		signal() 
 		{
 			handle = CreateSemaphore(nullptr, 0, 1, "url_uploader_signal");
 		}
 
-		__forceinline
-			void wait()
+		
+		void wait()
 		{
 			WaitForSingleObject(handle, INFINITE);
 		}
 
-		__forceinline
-			void notify_one()
+		
+		void notify_one()
 		{
 			ReleaseSemaphore(handle,1,nullptr);
 		}
 
-		__forceinline
+		
 		~signal()
 		{
 			CloseHandle(handle);
